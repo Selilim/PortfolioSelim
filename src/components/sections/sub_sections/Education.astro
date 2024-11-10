@@ -3,4 +3,54 @@ import CardListSection from '../../CardListSection.astro';
 import { education } from '../../../config/cv.json';
 ---
 
-<CardListSection title="Education" items={education} />
+<style>
+/* Animation de défilement (slide-in) */
+@keyframes slideIn {
+    0% {
+        opacity: 0;
+        transform: translateY(30px); /* Commence en bas */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0); /* Fin à la position normale */
+    }
+}
+
+.scroll-animation {
+    opacity: 0; /* Masqué par défaut */
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.scroll-animation.show {
+    animation: slideIn 0.8s ease forwards;
+}
+</style>
+
+<!-- Ajout de la classe scroll-animation pour l'effet de défilement -->
+<section class="scroll-animation">
+    <CardListSection title="Education" items={education} />
+</section>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const scrollElements = document.querySelectorAll('.scroll-animation');
+        
+        const scrollOptions = {
+            threshold: 0.3,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const scrollObserver = new IntersectionObserver(function (entries, observer) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('show');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, scrollOptions);
+
+        scrollElements.forEach(element => {
+            scrollObserver.observe(element);
+        });
+    });
+</script>

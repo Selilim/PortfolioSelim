@@ -4,32 +4,77 @@ import heroImage from '../../assets/paul_smith.png';
 import { basic } from '../../config/cv.json';
 ---
 
+<style>
+/* Effet fade-in pour les éléments */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+.fade-in.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Zoom léger pour l’image au survol */
+.image-zoom:hover {
+    transform: scale(1.05);
+    transition: transform 0.4s ease;
+}
+
+/* Animation de vibration pour le bouton */
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    20%, 60% { transform: translateX(-3px); }
+    40%, 80% { transform: translateX(3px); }
+}
+.button-animate {
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+.button-animate:hover {
+    animation: shake 0.4s ease; /* Applique l'animation de secousse au survol */
+    color: black; /* Change la couleur du texte en noir au survol */
+    border-color: rgb(0, 0, 0); /* Conserve l'encadrement blanc au survol */
+}
+
+/* Animation de rebond pour le titre de job */
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    20% { transform: translateY(-10px); }
+    40% { transform: translateY(-5px); }
+    80% { transform: translateY(-5px); }
+}
+.bounce-animation {
+    display: inline-block;
+    animation: bounce 2s ease infinite; /* Boucle continue */
+}
+</style>
+
 <section class="py-5 px-4 sm:py-10 lg:py-16">
     <div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
         <div class="grid items-center grid-cols-1 gap-12 lg:grid-cols-2">
-            <div class="relative flex justify-center">
-                <Image class="w-full md:max-w-md lg:max-w-md"
+            <div class="relative flex justify-center fade-in image-zoom">
+                <Image class="w-full md:max-w-md lg:max-w-md image-zoom"
                     src={heroImage}
                     alt="Selim Boubtane" />
             </div>
-            <div>
-                <p class="text-lg text-offset">
-                    {basic?.job}
-                </p>
-
+            <div class="fade-in">
                 <h1 class="text-2xl font-bold sm:text-4xl lg:text-5xl mt-3">
                     {basic?.name}
                 </h1>
+                <p class="text-lg text-offset bounce-animation">
+                    {basic?.job} <!-- Remplacez par "Développeur avec Expertise en Finance d'Entreprise" -->
+                </p>
 
                 <p class="mt-5 text-base sm:text-xl">
                     {basic?.summary}
                 </p>
 
                 <div class="mt-10 sm:flex sm:items-center sm:space-x-8">
-                    <a href=/about
+                    <a href="/about"
                         class="inline-flex items-center justify-center px-10 py-4 text-base text-white
                             font-semibold transition-all duration-200 rounded
-                            bg-primary hover:bg-secondary focus:bg-secondary" role="button">
+                            bg-primary hover:bg-secondary focus:bg-secondary button-animate" role="button">
                         Découvrir mon background
                     </a>
                 </div>
@@ -37,3 +82,29 @@ import { basic } from '../../config/cv.json';
         </div>
     </div>
 </section>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const faders = document.querySelectorAll('.fade-in');
+        
+        const appearOptions = {
+            threshold: 0.3,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const appearOnScroll = new IntersectionObserver(function (entries, observer) {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) {
+                    return;
+                } else {
+                    entry.target.classList.add('show');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, appearOptions);
+
+        faders.forEach(fader => {
+            appearOnScroll.observe(fader);
+        });
+    });
+</script>
