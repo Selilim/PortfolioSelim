@@ -1,0 +1,99 @@
+---
+import Layout from '../layouts/Layout.astro';
+import '../styles/index.css';
+
+const roadmap = [
+  {
+    category: "Frontend",
+    skills: [
+      { name: "HTML", status: "acquired", logo: "/icons/html5.svg" },
+      { name: "CSS", status: "acquired", logo: "/icons/css.svg" },
+      { name: "JavaScript", status: "in-progress", logo: "/icons/javascript.svg" },
+      { name: "React", status: "not-acquired", logo: "/icons/react.svg" },
+      { name: "Tailwind CSS", status: "not-acquired", logo: "/icons/tailwind.svg" }
+    ]
+  },
+  {
+    category: "Outils",
+    skills: [
+      { name: "npm", status: "not-acquired", logo: "/icons/npm.svg" },
+      { name: "Git", status: "in-progress", logo: "/icons/git.svg" },
+      { name: "GitHub", status: "in-progress", logo: "/icons/github.svg" }
+    ]
+  },
+  {
+    category: "Backend",
+    skills: [
+      { name: "Node.js", status: "not-acquired", logo: "/icons/node.svg" },
+      { name: "C#", status: "in-progress", logo: "/icons/csharp.svg" },
+      { name: "RESTful APIs", status: "not-acquired", logo: "/icons/api.svg" },
+      { name: "JWT Auth", status: "not-acquired", logo: "/icons/jwt.svg" }
+    ]
+  },
+  {
+    category: "Bases de Données",
+    skills: [
+      { name: "PostgreSQL", status: "not-acquired", logo: "/icons/postgresql.svg" }
+    ]
+  },
+  {
+    category: "DevOps",
+    skills: [
+      { name: "Linux Basics", status: "not-acquired", logo: "/icons/linux.svg" },
+      { name: "AWS Basics", status: "not-acquired", logo: "/icons/aws.svg" },
+      { name: "CI/CD", status: "not-acquired", logo: "/icons/cicd.svg" },
+      { name: "GitHub Actions", status: "not-acquired", logo: "/icons/github-actions.svg" },
+      { name: "Terraform", status: "not-acquired", logo: "/icons/terraform.svg" }
+    ]
+  }
+];
+---
+
+<Layout title="Roadmap vers Full-Stack Developer">
+  <div class="container mx-auto p-8">
+    <h1 class="text-4xl font-bold mb-8 text-center">Roadmap vers Full-Stack Developer</h1>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-8">
+      {roadmap.map(section => (
+        <div class="flex flex-col items-center bg-gray-100 rounded-lg shadow-lg p-4 w-full">
+          <h2 class="text-2xl font-semibold mb-4 text-gray-800">{section.category}</h2>
+          <div class="flex flex-col items-center space-y-4 w-full">
+            {section.skills.map(skill => (
+              <div class="relative flex flex-col items-center w-full">
+                <div class="w-1 h-4 bg-gray-300"></div>
+                <div class={`w-full p-4 rounded-lg shadow-md text-center ${
+                  skill.status === "acquired" 
+                    ? 'bg-green-200' 
+                    : skill.status === "in-progress" 
+                    ? 'bg-stripes' 
+                    : 'bg-white'
+                } flex items-center`}>
+                  <!-- Logo de la compétence -->
+                  <img src={skill.logo} alt={`${skill.name} logo`} class="w-8 h-8 mr-4" />
+                  
+                  <!-- Texte de la compétence -->
+                  <div class="flex flex-col text-left">
+                    <span class="text-xl font-semibold text-black">{skill.name}</span>
+                    <span class={`text-sm ${
+                      skill.status === "acquired" 
+                        ? 'text-green-600' 
+                        : skill.status === "in-progress" 
+                        ? 'text-green-600' 
+                        : 'text-red-500'
+                    }`}>
+                      {skill.status === "acquired" 
+                        ? 'Acquise' 
+                        : skill.status === "in-progress" 
+                        ? 'En cours' 
+                        : 'Non Acquise'}
+                    </span>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</Layout>

@@ -39,3 +39,82 @@
 .pulse-animation {
     animation: pulse 5s infinite;
 }
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  @keyframes grow {
+    from { height: 0; }
+    to { height: 4rem; }
+  }
+  
+  .animate-fade-in {
+    animation: fadeIn 0.8s ease-in-out;
+  }
+  
+  .animate-grow {
+    animation: grow 0.8s ease-in-out;
+  }
+/* Animation de flux pour la progression */
+@keyframes flow {
+    0% { background-position: 0 0; }
+    100% { background-position: 0 200%; }
+  }
+  
+  /* Barre de progression verte */
+  .progress-bar {
+    background: linear-gradient(180deg, #4ade80, #4ade80) 0 0 / 100% 200%;
+    background-size: 100% 200%;
+    animation: flow 3s linear infinite;
+    border-radius: 0.25rem;
+  }
+  /* index.css */
+
+/* Couleurs pour le mode clair */
+.bg-green-200 { background-color: #bbf7d0; }
+.text-green-800 { color: #065f46; }
+.text-green-600 { color: #047857; }
+
+/* Couleurs pour le mode sombre */
+.dark .bg-green-700 { background-color: #047857; }
+.dark .text-green-300 { color: #d1fae5; }
+
+/* Autres styles */
+.bg-white { background-color: #ffffff; }
+.bg-gray-100 { background-color: #f3f4f6; }
+.bg-gray-300 { background-color: #d1d5db; }
+.bg-gray-700 { background-color: #374151; }
+.bg-gray-800 { background-color: #1f2937; }
+.text-gray-900 { color: #111827; }
+.text-gray-100 { color: #f9fafb; }
+.text-red-500 { color: #ef4444; }
+/* Style hachuré pour les compétences "en cours" */
+.bg-stripes {
+    background-image: linear-gradient(45deg, rgba(0, 128, 0, 0.1) 25%, transparent 25%, transparent 50%, rgba(0, 128, 0, 0.1) 50%, rgba(0, 128, 0, 0.1) 75%, transparent 75%, transparent);
+    background-size: 10px 10px;
+  }
+/* Animation pour les hachures */
+/* Animation pour les hachures */
+@keyframes stripe-animation {
+    0% {
+      background-position: 0 0;
+    }
+    100% {
+      background-position: 40px 40px;
+    }
+  }
+  
+  /* Style hachuré dynamique pour les compétences "en cours" */
+  .bg-stripes {
+    background: repeating-linear-gradient(
+      90deg,
+      rgba(7, 235, 102, 0.2),
+      rgba(14, 236, 107, 0.2) 12px,
+      transparent 10px,
+      transparent 30px
+    );
+    background-size: 40px 40px;
+    animation: stripe-animation 1.5s linear infinite;
+  }
+  
