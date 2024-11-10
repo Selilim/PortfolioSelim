@@ -1,0 +1,64 @@
+{
+    "basic": {
+        "name": "Selim BOUBTANE",
+        "job": "Développeur avec Expertise en Finance d'Entreprise",
+        "summary": "Passionné par la création de solutions innovantes, je transforme les défis en opportunités grâce à la technologie et une expertise en finance d'entreprise.",
+        "cv_file_name": "paul_cv.pdf"
+    },
+"experiences": [
+    {
+        "title": "Conseiller Entreprises - Retraite",
+        "sub_title": "Ag2R La Mondiale",
+        "years": "Mai 2024 - Aujourd'hui",
+        "details": "Gestion de portefeuilles de contrats retraite avec optimisation des processus et sécurité des données. Contrôle des paies via les DSN et recouvrement des cotisations, renforçant les compétences en analyse de données."
+    },
+    {
+        "title": "Conseiller Financier",
+        "sub_title": "CIC Paris Saint-Honoré",
+        "years": "Mars 2022 - Avril 2024",
+        "details": "Diagnostic et accompagnement des clients dans leurs besoins financiers, avec une approche méthodique de l'analyse de profils et de la gestion des risques."
+    },
+
+    {
+        "title": "Chargé Clientèle Entreprises (Stage)",
+        "sub_title": "BNP PARIBAS",
+        "years": "Janvier à Juillet 2020",
+        "details": "Analyse financière des dossiers de financement pour l'évaluation des risques d'investissement dans des projets."
+    }
+],
+"education": [
+    {
+        "title": "Master Corporate Finance (Finance d’entreprise)",
+        "sub_title": "EMLV- Léonard de Vinci, La Défense",
+        "years": "2020",
+        "details": "Formation en finance d'entreprise incluant comptabilité, droit des affaires, audit et analyse financière. Spécialisation en Private Equity et techniques bancaires."
+    },
+    {
+        "title": "DUT GEA (Gestion des Entreprises et Administrations)",
+        "sub_title": "Université Sorbonne Paris Nord, Paris",
+        "years": "2016",
+        "details": "Formation en gestion d'entreprise avec des compétences en comptabilité, gestion et analyse économique."
+    }
+],
+
+    "projects": [
+        {
+            "imageUrl": "https://images.unsplash.com/photo-1487017159836-4e23ece2e4cf?q=80&w=764&auto=format&fit=crop",
+            "title": "Soon...",
+            "type": "",
+            "link": ""
+        },
+        {
+            "imageUrl": "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?q=80&w=764&auto=format&fit=crop",
+            "title": "Soon...",
+            "type": "",
+            "link": ""
+        },
+        {
+            "imageUrl": "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?q=80&w=764&auto=format&fit=crop",
+            "title": "Soon...",
+            "type": "",
+            "link": ""
+        }
+    ]
+}
