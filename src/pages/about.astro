@@ -1,18 +1,139 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import '../styles/index.css';
 ---
 
+<style>
+/* Animation de fade-in pour l'effet de défilement */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Animation de pulse pour les logos */
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(0.8);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+}
+
+.pulse-animation {
+    animation: pulse 2.5s infinite;
+}
+
+/* Espacement autour de la section des logos */
+.logo-section {
+    margin-top: 3rem;  /* Espace au-dessus de la section des logos */
+    margin-bottom: 3rem; /* Espace en dessous de la section des logos */
+}
+</style>
+
 <Layout title="À Propos - Selim BOUBTANE">
-    <section>
-        <h1>À Propos de Moi</h1>
-        <p>
-            Bienvenue sur ma page "À Propos". Je suis [ton nom], un développeur passionné par [tes spécialités].
+    <section style="max-width: 800px; margin: 0 auto; padding: 2rem; text-align: justify; line-height: 1.6;">
+        
+        <h1 class="fade-in" style="font-size: 2.5rem; font-weight: bold; margin-bottom: 1.5rem; text-align: center;">À Propos de Moi</h1>
+        
+        <p class="fade-in" style="margin-bottom: 1.5rem; font-size: 1.1rem;">
+            Bonjour et bienvenue ! Je suis Selim BOUBTANE, fort d’une expérience solide en finance d’entreprise et animé par une ambition claire : devenir un programmeur accompli. Mon parcours en conseil financier et gestion de portefeuilles m’a doté d’une rigueur analytique et d’un sens du détail qui sont autant d’atouts précieux pour le développement logiciel. Passionné par l’univers de la technologie, j’aspire à appliquer cette expertise pour concevoir des solutions logicielles optimisées et innovantes. Je suis actuellement en transition vers la programmation, avec un intérêt marqué pour l’automatisation, la qualité du code et l’efficacité des processus. Mon objectif est de transformer cette passion en compétences concrètes, pour bâtir un avenir où je pourrai contribuer activement au monde de la tech.
         </p>
-        <p>
-            Mon portfolio met en valeur mes compétences en [tes compétences ou technologies].
+        
+        <h2 class="fade-in" style="font-size: 2rem; margin: 2rem 0 1rem; font-weight: 600; text-align: center;">Compétences Techniques</h2>
+        
+        <p class="fade-in" style="margin-bottom: 1rem;">
+            En pleine formation en programmation, j’ai acquis des compétences solides en C#, Python, HTML5, CSS et JavaScript. Ma passion pour le code me pousse à approfondir sans cesse mes connaissances et à adopter les meilleures pratiques pour produire un code propre, efficace et évolutif. Mon objectif est de maîtriser ces outils pour contribuer à des projets ambitieux et innovants.
         </p>
-        <p>
-            Je suis toujours à la recherche de nouveaux défis et d’opportunités pour approfondir mes connaissances et partager mes compétences. Mon objectif est de créer des solutions innovantes et efficaces pour répondre aux besoins de mes clients et partenaires.
+        
+        <!-- Section des logos avec marges supplémentaires -->
+        <ul class="fade-in logo-section" style="list-style: none; padding: 0; display: flex; justify-content: center; gap: 1.5rem; font-size: 1.1rem; text-align: center;">
+            <li>
+                <img src="/src/icons/csharp.svg" alt="C# Logo" class="pulse-animation logo" style="width: 100px; transition: transform 0.3s ease;">
+            </li>
+            <li>
+                <img src="/src/icons/python.svg" alt="Python Logo" class="pulse-animation logo" style="width: 100px; transition: transform 0.3s ease;">
+            </li>
+            <li>
+                <img src="/src/icons/html5.svg" alt="HTML5 Logo" class="pulse-animation logo" style="width: 100px; transition: transform 0.3s ease;">
+            </li>
+            <li>
+                <img src="/src/icons/css.svg" alt="CSS Logo" class="pulse-animation logo" style="width: 100px; transition: transform 0.3s ease;">
+            </li>
+            <li>
+                <img src="/src/icons/javascript.svg" alt="JavaScript Logo" class="pulse-animation logo" style="width: 100px; transition: transform 0.3s ease;">
+            </li>
+        </ul>
+
+        <h2 class="fade-in" style="font-size: 2rem; margin: 2rem 0 1rem; font-weight: 600; text-align: center;">Mes Valeurs et Soft Skills</h2>
+        
+        <p class="fade-in" style="margin-bottom: 1rem;">
+            Rigoureux et orienté vers la qualité, je me distingue par un esprit analytique et une capacité d'adaptation aux environnements changeants. Voici quelques valeurs et soft skills qui guident mon travail :
+        </p>
+        
+        <ul class="fade-in" style="list-style-type: none; padding: 0; text-align: justify; max-width: 700px; margin: 0 auto;">
+            <li><strong>Esprit d’analyse et de synthèse :</strong> Toujours à la recherche de la précision et de la cohérence dans les données et les processus.</li>
+            <li><strong>Curiosité et esprit critique :</strong> J’aime explorer de nouvelles approches et poser les bonnes questions pour anticiper les défis.</li>
+            <li><strong>Communication efficace :</strong> La clarté et la transparence sont au cœur de mes interactions avec les clients et les équipes.</li>
+            <li><strong>Rigueur et souci du détail :</strong> Chaque étape compte pour garantir la fiabilité et la qualité des résultats.</li>
+        </ul>
+
+        <h2 class="fade-in" style="font-size: 2rem; margin: 2rem 0 1rem; font-weight: 600; text-align: center;">Réalisations Notables</h2>
+        
+        <p class="fade-in" style="margin-bottom: 1rem;">
+            Mon parcours inclut des contributions significatives dans différents projets, tels que :
+        </p>
+        
+        <ul class="fade-in" style="list-style-type: disc; text-align: justify; max-width: 700px; margin: 0 auto;">
+            <li>Analyse financière de projets d’investissement dans des secteurs à fort potentiel, tels que la santé et l'AgTech, pour identifier des opportunités de rendement élevé.</li>
+            <li>Développement de stratégies financières personnalisées pour des clients professionnels chez CIC, répondant précisément aux besoins financiers complexes.</li>
+            <li>Optimisation des processus de gestion de la retraite et de contrôle des cotisations chez Ag2R La Mondiale, améliorant la conformité et la sécurité des données.</li>
+        </ul>
+
+        <h2 class="fade-in" style="font-size: 2rem; margin: 2rem 0 1rem; font-weight: 600; text-align: center;">Envie d’Échanger ?</h2>
+        
+        <p class="fade-in" style="text-align: justify;">
+            Si vous cherchez un partenaire doté d'une expertise en finance et en qualité logicielle, n'hésitez pas à me <a href="/contact" style="text-decoration: none; font-weight: bold;">contacter</a>. Je serais ravi de discuter de vos projets et de voir comment nous pourrions travailler ensemble pour transformer vos idées en solutions concrètes et performantes.
         </p>
     </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Gestion du défilement pour l'animation fade-in
+            const faders = document.querySelectorAll('.fade-in');
+            const appearOptions = { threshold: 0.3, rootMargin: '0px 0px -50px 0px' };
+            const appearOnScroll = new IntersectionObserver(function (entries, observer) {
+                entries.forEach(entry => {
+                    if (!entry.isIntersecting) return;
+                    entry.target.classList.add('show');
+                    observer.unobserve(entry.target);
+                });
+            }, appearOptions);
+            faders.forEach(fader => appearOnScroll.observe(fader));
+    
+            // Gestion de l'animation "pulse" et du survol des logos
+            const logos = document.querySelectorAll('.logo') as NodeListOf<HTMLImageElement>;
+    
+            logos.forEach(logo => {
+                logo.addEventListener('mouseover', () => {
+                    // Pause l'animation "pulse" sur tous les logos sauf le survolé
+                    logos.forEach(l => l.classList.remove('pulse-animation'));
+                    logo.style.transform = 'scale(1.9)';
+                });
+    
+                logo.addEventListener('mouseout', () => {
+                    // Réactive l'animation "pulse" sur tous les logos
+                    logos.forEach(l => l.classList.add('pulse-animation'));
+                    logo.style.transform = 'scale(1)';
+                });
+            });
+        });
+    </script>
+    
 </Layout>
