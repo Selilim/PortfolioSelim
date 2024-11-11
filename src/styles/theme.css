@@ -1,22 +1,44 @@
+/* Thème clair */
 [data-theme="light"] {
-    --color-primary: theme("colors.blue.500");
-    --color-secondary: theme("colors.indigo.400");
-    --color-text: theme("colors.gray.900");
-    --color-text-offset: theme("colors.gray.600");
-    --color-background: theme("colors.gray.50");
-    --color-background-offset: theme("colors.gray.100");
-    --color-border: theme("colors.gray.900" / 10%);
+  --color-primary: theme("colors.blue.500");
+  --color-secondary: theme("colors.indigo.400");
+  --color-text: theme("colors.gray.900");
+  --color-text-offset: theme("colors.gray.600");
+  --color-background: theme("colors.gray.50");
+  --color-background-offset: theme("colors.gray.100");
+  --color-border: theme("colors.gray.900" / 10%);
+  --color-bloc-roadmap-bg: theme("colors.gray.200"); /* Fond clair pour BlocRoadmap */
+  --color-titre-bloc-roadmap-text: theme("colors.gray.900"); /* Texte sombre pour TitreBlocRoadmap */
 }
 
+/* Thème sombre */
 [data-theme="dark"] {
-    --color-primary: theme("colors.blue.400");
-    --color-secondary: theme("colors.indigo.300");
-    --color-text: theme("colors.gray.50");
-    --color-text-offset: theme("colors.gray.400");
-    --color-background: theme("colors.gray.900");
-    --color-background-offset: theme("colors.gray.800");
-    --color-border: theme("colors.gray.50" / 10%);
+  --color-primary: theme("colors.blue.400");
+  --color-secondary: theme("colors.indigo.300");
+  --color-text: theme("colors.gray.50");
+  --color-text-offset: theme("colors.gray.400");
+  --color-background: theme("colors.gray.900");
+  --color-background-offset: theme("colors.gray.800");
+  --color-border: theme("colors.gray.50" / 10%);
+  --color-bloc-roadmap-bg: theme("colors.gray.800"); /* Fond sombre pour BlocRoadmap */
+  --color-titre-bloc-roadmap-text: theme("colors.gray.50"); /* Texte clair pour TitreBlocRoadmap */
 }
+
+/* Appliquer les styles basés sur le thème */
+#BlocRoadmap {
+  background-color: var(--color-bloc-roadmap-bg);
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+}
+
+#TitreBlocRoadmap {
+  color: var(--color-titre-bloc-roadmap-text);
+  font-weight: bold; /* Optionnel : accentue le texte */
+  font-size: 1.25rem; /* Optionnel : ajustez selon vos besoins */
+}
+
+
+
 .fade-in {
     opacity: 0;
     transform: translateY(20px);
@@ -116,5 +138,6 @@
     );
     background-size: 40px 40px;
     animation: stripe-animation 1.5s linear infinite;
+    border: ridge rgba(7, 235, 102, 0.2);
   }
   
