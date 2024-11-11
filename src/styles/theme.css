@@ -7,7 +7,7 @@
   --color-background: theme("colors.gray.50");
   --color-background-offset: theme("colors.gray.100");
   --color-border: theme("colors.gray.900" / 10%);
-  --color-bloc-roadmap-bg: theme("colors.gray.200"); /* Fond clair pour BlocRoadmap */
+  --color-bloc-roadmap-bg: theme("colors.gray.300"); /* Fond clair pour BlocRoadmap */
   --color-titre-bloc-roadmap-text: theme("colors.gray.900"); /* Texte sombre pour TitreBlocRoadmap */
 }
 
@@ -20,7 +20,7 @@
   --color-background: theme("colors.gray.900");
   --color-background-offset: theme("colors.gray.800");
   --color-border: theme("colors.gray.50" / 10%);
-  --color-bloc-roadmap-bg: theme("colors.gray.800"); /* Fond sombre pour BlocRoadmap */
+  --color-bloc-roadmap-bg: theme("colors.gray.600"); /* Fond sombre pour BlocRoadmap */
   --color-titre-bloc-roadmap-text: theme("colors.gray.50"); /* Texte clair pour TitreBlocRoadmap */
 }
 
