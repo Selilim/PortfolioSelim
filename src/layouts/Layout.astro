@@ -14,57 +14,58 @@ const { title } = Astro.props;
 <!doctype html>
 <html lang="fr" class="h-full" data-theme="light">
 	<head>
-
-			<!-- Google tag (gtag.js) -->
-			<script async src="https://www.googletagmanager.com/gtag/js?id=G-HMPN690SHE"></script>
-			<script is:inline>
-			window.dataLayer = window.dataLayer || [];
-			function gtag(){dataLayer.push(arguments);}
-			gtag('js', new Date());
-
-			gtag('config', 'G-HMPN690SHE');
-			</script>
-			<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9252245678487060"
-			crossorigin="anonymous"></script>
-			<meta name="google-adsense-account" content="ca-pub-9252245678487060">
-		
 		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>{title}</title>
+		
+		<!-- SEO & Social Meta Tags -->
+		<meta name="description" content="Découvrez les solutions IT et les projets de Selim Boubtane, un développeur passionné." />
+		<meta property="og:title" content="Selim Boubtane - Développeur Full-Stack" />
+		<meta property="og:description" content="Découvrez les solutions IT et les projets de Selim Boubtane, un développeur passionné en développement et solutions IT." />
+		<meta property="og:image" content="/public/favicon.png" /> <!-- Remplacez par l'URL de votre image de prévisualisation -->
+		<meta property="og:url" content="https://selim-boubtane.fr" />
+		<meta property="og:type" content="website" />
+		<meta name="google-adsense-account" content="ca-pub-9252245678487060" />
+		
+		<!-- Icons & Favicons -->
+		<link rel="icon" href="/public/favicon.png" type="image/png">
+		<meta name="generator" content={Astro.generator} />
 
-		<!-- initialize theme -->
+		<!-- Google Analytics -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=G-HMPN690SHE"></script>
+		<script is:inline>
+			window.dataLayer = window.dataLayer || [];
+			function gtag() { dataLayer.push(arguments); }
+			gtag('js', new Date());
+			gtag('config', 'G-HMPN690SHE');
+		</script>
+
+		<!-- Google Adsense -->
+		<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9252245678487060"
+			crossorigin="anonymous"></script>
+
+		<!-- Theme Initialization -->
 		<script is:inline>
 			const themeSaved = localStorage.getItem("theme");
-
 			if (themeSaved) {
 				document.documentElement.dataset.theme = themeSaved;
 			} else {
 				const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-
 				document.documentElement.dataset.theme = prefersDark ? "dark" : "light";
 			}
-
-			window
-				.matchMedia("(prefers-color-scheme: dark)")
-				.addEventListener("change", (event) => {
-					if (!localStorage.getItem("theme")) {
-						document.documentElement.dataset.theme = event.matches
-							? "dark"
-							: "light";
-					}
-				});
+			window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", (event) => {
+				if (!localStorage.getItem("theme")) {
+					document.documentElement.dataset.theme = event.matches ? "dark" : "light";
+				}
+			});
 		</script>
-		
 	</head>
-	<body class="h-full flex flex-col overflow-x-hidden bg-default
-		text-default text-base selection:bg-secondary">
+	
+	<body class="h-full flex flex-col overflow-x-hidden bg-default text-default text-base selection:bg-secondary">
 		<Header />
-		<section class="flex-grow">
+		<main class="flex-grow">
 			<slot />
-		</section>
+		</main>
 		<Footer />
 	</body>
 </html>

@@ -1,26 +1,26 @@
 /* Thème clair */
 [data-theme="light"] {
-  --color-primary: theme("colors.blue.500");
+  --color-primary: #DAF1DB;
   --color-secondary: theme("colors.indigo.400");
-  --color-text: theme("colors.gray.900");
+  --color-text: #203C25;
   --color-text-offset: theme("colors.gray.600");
-  --color-background: theme("colors.gray.200");
+  --color-background: #E9F6E9;
   --color-background-offset: theme("colors.gray.100");
-  --color-border: theme("colors.gray.900" / 10%);
-  --color-bloc-roadmap-bg: theme("colors.gray.300"); /* Fond clair pour BlocRoadmap */
-  --color-titre-bloc-roadmap-text: theme("colors.gray.900"); /* Texte sombre pour TitreBlocRoadmap */
+  --color-border: #94CE9A;
+  --color-bloc-roadmap-bg: #C9E8CA; /* Fond clair pour BlocRoadmap */
+  --color-titre-bloc-roadmap-text: #203C25; /* Texte sombre pour TitreBlocRoadmap */
 }
 
 /* Thème sombre */
 [data-theme="dark"] {
-  --color-primary: theme("colors.blue.400");
+  --color-primary: #3DD68C;
   --color-secondary: theme("colors.indigo.300");
   --color-text: theme("colors.gray.50");
   --color-text-offset: theme("colors.gray.400");
-  --color-background: theme("colors.gray.800");
+  --color-background: #121C18;
   --color-background-offset: theme("colors.gray.800");
-  --color-border: theme("colors.gray.50" / 10%);
-  --color-bloc-roadmap-bg: theme("colors.gray.600"); /* Fond sombre pour BlocRoadmap */
+  --color-border: #366740;
+  --color-bloc-roadmap-bg: #132D21; /* Fond sombre pour BlocRoadmap */
   --color-titre-bloc-roadmap-text: theme("colors.gray.50"); /* Texte clair pour TitreBlocRoadmap */
 }
 
@@ -103,7 +103,7 @@
 .dark .text-green-300 { color: #d1fae5; }
 
 /* Autres styles */
-.bg-white { background-color: #ffffff; }
+.bg-white { background-color: #F5FBF5; }
 .bg-gray-100 { background-color: #f3f4f6; }
 .bg-gray-300 { background-color: #d1d5db; }
 .bg-gray-700 { background-color: #374151; }
@@ -138,8 +138,10 @@
     );
     background-size: 40px 40px;
     animation: stripe-animation 1.5s linear infinite;
-    border: ridge rgba(7, 235, 102, 0.2);
+    border: ridge rgba(7, 235, 102, 0.445);
   }
   .text-justify {
     text-align: justify;
 }
+
+

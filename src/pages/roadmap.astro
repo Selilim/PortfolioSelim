@@ -66,7 +66,7 @@ const roadmap = [
                 <div class="w-1 h-4 bg-gray-300"></div>
                 <div class={`w-full p-4 rounded-lg shadow-md text-center ${
                   skill.status === "acquired" 
-                    ? 'bg-green-200' 
+                    ? 'bg-green-500' 
                     : skill.status === "in-progress" 
                     ? 'bg-stripes' 
                     : 'bg-white'
@@ -79,7 +79,7 @@ const roadmap = [
                     <span class="text-xl font-semibold text-black">{skill.name}</span>
                     <span class={`text-sm ${
                       skill.status === "acquired" 
-                        ? 'text-green-600' 
+                        ? 'text-green-100' 
                         : skill.status === "in-progress" 
                         ? 'text-black-600' 
                         : 'text-red-500'
