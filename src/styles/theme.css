@@ -144,3 +144,78 @@
     text-align: justify;
 }
 
+/* Animation de battement de cœur */
+@keyframes heartbeat {
+  0%, 100% {
+    transform: scale(1); /* Taille normale */
+  }
+  60% {
+    transform: scale(1.0051); /* Zoom léger */
+  }
+}
+
+/* Animation de bordure pulsante (optionnel) */
+@keyframes pulse-border {
+  0%, 100% {
+    box-shadow: 0 0 10px rgba(28, 68, 25, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(5, 20, 1, 0.8);
+  }
+}
+
+/* Animation d’apparition au défilement */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px); /* Commence en bas */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0); /* Position finale */
+  }
+}
+
+/* Classe de base pour les boîtes de projets */
+.project-box {
+  animation: heartbeat 4s infinite ease-in-out; /* Battement de cœur toujours actif */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animation de survol */
+  will-change: transform; /* Optimisation des performances */
+  border-radius: 10px; /* Coins arrondis */
+  overflow: hidden; /* Contenu limité à la boîte */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Ombre de base */
+}
+
+/* Survol : Zoom avec une ombre plus prononcée */
+.project-box:hover {
+  transform: scale(1.08); /* Zoom supplémentaire */
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3); /* Ombre accentuée */
+}
+
+/* Clic : Réduction temporaire */
+.project-box:active {
+  transform: scale(0.95); /* Réduction au clic */
+  transition: transform 0.1s ease;
+}
+
+/* Apparition au défilement */
+.scroll-animation {
+  opacity: 0; /* Masqué par défaut */
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.scroll-animation.show {
+  animation: fadeInUp 0.8s ease forwards; /* Apparition fluide */
+}
+
+/* Bordure pulsante (si utilisée) */
+.project-box.pulsing-border {
+  animation: heartbeat 1.5s infinite ease-in-out, pulse-border 1.5s infinite ease-in-out;
+}
+
+/* Ajustement des effets sur les mobiles */
+@media (max-width: 768px) {
+  .project-box:hover {
+    transform: scale(1.05); /* Réduction du zoom sur mobile */
+  }
+}
