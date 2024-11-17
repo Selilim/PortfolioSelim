@@ -7,8 +7,8 @@
   --color-background: #E9F6E9;
   --color-background-offset: theme("colors.gray.100");
   --color-border: #94CE9A;
-  --color-bloc-roadmap-bg: #C9E8CA; /* Fond clair pour BlocRoadmap */
-  --color-titre-bloc-roadmap-text: #203C25; /* Texte sombre pour TitreBlocRoadmap */
+  --color-bloc-roadmap-bg: #C9E8CA;
+  --color-titre-bloc-roadmap-text: #203C25;
 }
 
 /* Thème sombre */
@@ -20,11 +20,11 @@
   --color-background: #121C18;
   --color-background-offset: theme("colors.gray.800");
   --color-border: #366740;
-  --color-bloc-roadmap-bg: #132D21; /* Fond sombre pour BlocRoadmap */
-  --color-titre-bloc-roadmap-text: theme("colors.gray.50"); /* Texte clair pour TitreBlocRoadmap */
+  --color-bloc-roadmap-bg: #132D21;
+  --color-titre-bloc-roadmap-text: theme("colors.gray.50");
 }
 
-/* Appliquer les styles basés sur le thème */
+/* BlocRoadmap */
 #BlocRoadmap {
   background-color: var(--color-bloc-roadmap-bg);
   padding: 1.5rem;
@@ -33,131 +33,36 @@
 
 #TitreBlocRoadmap {
   color: var(--color-titre-bloc-roadmap-text);
-  font-weight: bold; /* Optionnel : accentue le texte */
-  font-size: 1.25rem; /* Optionnel : ajustez selon vos besoins */
+  font-weight: bold;
+  font-size: 1.25rem;
 }
 
-
-
+/* Fade-in animation */
 .fade-in {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 3s ease-out, transform 3s ease-out;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 3s ease-out, transform 3s ease-out;
 }
 
 .fade-in.show {
-    opacity: 1;
-    transform: translateY(0);
-}
-@keyframes pulse {
-    0%, 10% {
-        transform: scale(0.5);
-    }
-    100% {
-        transform: scale(1.9);
-    }
-}
-
-.pulse-animation {
-    animation: pulse 5s infinite;
-}
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-  }
-  
-  @keyframes grow {
-    from { height: 0; }
-    to { height: 4rem; }
-  }
-  
-  .animate-fade-in {
-    animation: fadeIn 0.8s ease-in-out;
-  }
-  
-  .animate-grow {
-    animation: grow 0.8s ease-in-out;
-  }
-/* Animation de flux pour la progression */
-@keyframes flow {
-    0% { background-position: 0 0; }
-    100% { background-position: 0 200%; }
-  }
-  
-  /* Barre de progression verte */
-  .progress-bar {
-    background: linear-gradient(180deg, #4ade80, #4ade80) 0 0 / 100% 200%;
-    background-size: 100% 200%;
-    animation: flow 3s linear infinite;
-    border-radius: 0.25rem;
-  }
-  /* index.css */
-
-/* Couleurs pour le mode clair */
-.bg-green-200 { background-color: #bbf7d0; }
-.text-green-800 { color: #065f46; }
-.text-green-600 { color: #047857; }
-
-/* Couleurs pour le mode sombre */
-.dark .bg-green-700 { background-color: #047857; }
-.dark .text-green-300 { color: #d1fae5; }
-
-/* Autres styles */
-.bg-white { background-color: #F5FBF5; }
-.bg-gray-100 { background-color: #f3f4f6; }
-.bg-gray-300 { background-color: #d1d5db; }
-.bg-gray-700 { background-color: #374151; }
-.bg-gray-800 { background-color: #1f2937; }
-.text-gray-900 { color: #111827; }
-.text-gray-100 { color: #f9fafb; }
-.text-red-500 { color: #ef4444; }
-/* Style hachuré pour les compétences "en cours" */
-.bg-stripes {
-    background-image: linear-gradient(45deg, rgba(0, 128, 0, 0.1) 25%, transparent 25%, transparent 50%, rgba(0, 128, 0, 0.1) 50%, rgba(0, 128, 0, 0.1) 75%, transparent 75%, transparent);
-    background-size: 10px 10px;
-  }
-/* Animation pour les hachures */
-/* Animation pour les hachures */
-@keyframes stripe-animation {
-    0% {
-      background-position: 0 0;
-    }
-    100% {
-      background-position: 40px 40px;
-    }
-  }
-  
-  /* Style hachuré dynamique pour les compétences "en cours" */
-  .bg-stripes {
-    background: repeating-linear-gradient(
-      90deg,
-      rgba(7, 235, 102, 0.2),
-      rgba(14, 236, 107, 0.2) 12px,
-      transparent 10px,
-      transparent 30px
-    );
-    background-size: 40px 40px;
-    animation: stripe-animation 1.5s linear infinite;
-    border: ridge rgba(7, 235, 102, 0.445);
-  }
-  .text-justify {
-    text-align: justify;
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* Animation de battement de cœur */
 @keyframes heartbeat {
   0%, 100% {
-    transform: scale(1); /* Taille normale */
+    transform: scale(1);
   }
-  60% {
-    transform: scale(1.0051); /* Zoom léger */
+  50% {
+    transform: scale(1.02);
   }
 }
 
-/* Animation de bordure pulsante (optionnel) */
+/* Animation de bordure pulsante */
 @keyframes pulse-border {
   0%, 100% {
-    box-shadow: 0 0 10px rgba(28, 68, 25, 0.5);
+    box-shadow: 0 0 50px rgba(69, 219, 58, 0.5);
   }
   50% {
     box-shadow: 0 0 20px rgba(5, 20, 1, 0.8);
@@ -168,54 +73,134 @@
 @keyframes fadeInUp {
   from {
     opacity: 0;
-    transform: translateY(30px); /* Commence en bas */
+    transform: translateY(30px);
   }
   to {
     opacity: 1;
-    transform: translateY(0); /* Position finale */
+    transform: translateY(0);
   }
+}
+
+/* Barre de progression verte */
+@keyframes flow {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 0 200%;
+  }
+}
+
+.progress-bar {
+  background: linear-gradient(180deg, #4ade80, #4ade80) 0 0 / 100% 200%;
+  background-size: 100% 200%;
+  animation: flow 3s linear infinite;
+  border-radius: 0.25rem;
+}
+
+/* Styles de base des couleurs */
+.bg-white {
+  background-color: #F5FBF5;
+}
+
+.bg-gray-100 {
+  background-color: #f3f4f6;
+}
+
+.bg-gray-300 {
+  background-color: #d1d5db;
+}
+
+.bg-gray-700 {
+  background-color: #374151;
+}
+
+.bg-gray-800 {
+  background-color: #1f2937;
+}
+
+.text-gray-900 {
+  color: #111827;
+}
+
+.text-gray-100 {
+  color: #f9fafb;
+}
+
+/* Style hachuré */
+@keyframes stripe-animation {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 40px 40px;
+  }
+}
+
+.bg-stripes {
+  background: repeating-linear-gradient(
+    90deg,
+    rgba(7, 235, 102, 0.2),
+    rgba(14, 236, 107, 0.2) 12px,
+    transparent 10px,
+    transparent 30px
+  );
+  background-size: 40px 40px;
+  animation: stripe-animation 1.5s linear infinite;
+  border: ridge rgba(7, 235, 102, 0.445);
 }
 
 /* Classe de base pour les boîtes de projets */
 .project-box {
-  animation: heartbeat 4s infinite ease-in-out; /* Battement de cœur toujours actif */
-  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animation de survol */
-  will-change: transform; /* Optimisation des performances */
-  border-radius: 10px; /* Coins arrondis */
-  overflow: hidden; /* Contenu limité à la boîte */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Ombre de base */
+  position: relative;
+  animation: heartbeat 3.5s infinite ease-in-out; /* Battement */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animation hover */
+  border-radius: 30px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.788);
 }
 
-/* Survol : Zoom avec une ombre plus prononcée */
+/* Hover : Zoom et ombre */
 .project-box:hover {
-  transform: scale(1.08); /* Zoom supplémentaire */
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3); /* Ombre accentuée */
+  transform: scale(2); /* Zoom au survol */
+  box-shadow: 0 25px 50px rgba(67, 116, 65, 0.781); /* Ombre accentuée */
 }
 
-/* Clic : Réduction temporaire */
-.project-box:active {
-  transform: scale(0.95); /* Réduction au clic */
-  transition: transform 0.1s ease;
+/* Arrière-plan animé isolé */
+.animated-background {
+  position: absolute;
+  inset: 0;
+  z-index: 0; /* Derrière le contenu */
+  background-size: cover;
+  background-position: center;
+  animation: heartbeat 1.5s infinite ease-in-out; /* Battement */
+}
+
+/* Contenu relatif (pour éviter le blur) */
+.project-box .relative {
+  position: relative;
+  z-index: 10;
 }
 
 /* Apparition au défilement */
 .scroll-animation {
-  opacity: 0; /* Masqué par défaut */
+  opacity: 0;
   transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
 
 .scroll-animation.show {
-  animation: fadeInUp 0.8s ease forwards; /* Apparition fluide */
+  animation: fadeInUp 0.8s ease forwards;
 }
 
-/* Bordure pulsante (si utilisée) */
-.project-box.pulsing-border {
-  animation: heartbeat 1.5s infinite ease-in-out, pulse-border 1.5s infinite ease-in-out;
+/* Clic : Réduction temporaire */
+.project-box:active {
+  transform: scale(0.95);
+  transition: transform 0.1s ease;
 }
 
-/* Ajustement des effets sur les mobiles */
+/* Ajustement pour les mobiles */
 @media (max-width: 768px) {
   .project-box:hover {
-    transform: scale(1.05); /* Réduction du zoom sur mobile */
+    transform: scale(1.05);
   }
 }

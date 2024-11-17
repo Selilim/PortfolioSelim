@@ -3,15 +3,22 @@ const { imageUrl, title, type, link, languages } = Astro.props;
 ---
 
 <a href={link} target="_blank" rel="noopener noreferrer">
-    <div class="overflow-hidden bg-cover rounded-lg cursor-pointer h-64 group project-box pulsing-border"
-        style={`background-image:url('${imageUrl}')`}>
-        <div
-            class="flex flex-col justify-center w-full h-full px-8 py-4 backdrop-brightness-90  ">
-            <h2 class="mt-4 text-xl  text-white">{title}</h2>
-            <p class="mt-2  text-primary ">{type}</p>
-            <!-- Section des icônes -->
+    <div class="overflow-hidden rounded-lg cursor-pointer h-64 group project-box">
+        <!-- Arrière-plan animé (fond isolé) -->
+        <div class="animated-background absolute inset-0"
+            style={`background-image:url('${imageUrl}')`}></div>
+        
+        <!-- Contenu (titre, type, icônes) -->
+        <div class="relative z-10 flex flex-col justify-center w-full h-full px-8 py-4">
+            <!-- Titre -->
+            <h2 class="mt-4 text-xl text-white ">{title}</h2>
+            
+            <!-- Type de projet -->
+            <p class="mt-2 text-primary text-center">{type}</p>
+            
+            <!-- Icônes des langages utilisés -->
             <div class="flex justify-center mt-2 space-x-2">
-                {languages.map((lang:string) => (
+                {languages.map((lang: string) => (
                     <img 
                         src={`/icons/${lang}.svg`} 
                         alt={`${lang} icon`} 
