@@ -43,9 +43,9 @@
 
  "projects": [
     {
-        "imageUrl": "https://images.unsplash.com/photo-1484417894907-623942c8ee29?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-        "title": "Selim's Portfolio",
-        "type": "Site web",
+        "imageUrl": "https://images.unsplash.com/photo-1623479322729-28b25c16b011?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "title": "Selim's Portfolio est mon tout premier site web, une vitrine simple et élégante qui reflète mon parcours et mes aspirations dans le développement web.",
+        "type": "selim-boubtane.fr",
         "link": "",
         "languages": ["html5", "css", "javascript", "tailwind"]
     },

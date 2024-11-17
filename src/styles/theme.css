@@ -1,6 +1,6 @@
 /* Thème clair */
 [data-theme="light"] {
-  --color-primary: #DAF1DB;
+  --color-primary: #3DD68C;
   --color-secondary: theme("colors.indigo.400");
   --color-text: #203C25;
   --color-text-offset: theme("colors.gray.600");
