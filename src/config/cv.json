@@ -41,24 +41,29 @@
     }
 ],
 
-    "projects": [
-        {
-            "imageUrl": "https://images.unsplash.com/photo-1487017159836-4e23ece2e4cf?q=80&w=764&auto=format&fit=crop",
-            "title": "Soon...",
-            "type": "",
-            "link": ""
-        },
-        {
-            "imageUrl": "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?q=80&w=764&auto=format&fit=crop",
-            "title": "Soon...",
-            "type": "",
-            "link": ""
-        },
-        {
-            "imageUrl": "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?q=80&w=764&auto=format&fit=crop",
-            "title": "Soon...",
-            "type": "",
-            "link": ""
-        }
-    ]
+ "projects": [
+    {
+        "imageUrl": "./icons/bgweb.png",
+        "title": "Selim's Portfolio",
+        "type": "Site web",
+        "link": "",
+        "languages": ["html5", "css", "javascript", "tailwind"]
+    },
+    {
+        "imageUrl": "https://images.unsplash.com/photo-1487017159836-4e23ece2e4cf?q=80&w=764&auto=format&fit=crop",
+        "title": "A venir ...",
+        "type": "",
+        "link": "",
+        "languages": []
+    },
+    {
+        "imageUrl": "https://images.unsplash.com/photo-1487017159836-4e23ece2e4cf?q=80&w=764&auto=format&fit=crop",
+        "title": "A venir ...",
+        "type": "",
+        "link": "",
+        "languages": []
+    }
+]
+
+
 }
