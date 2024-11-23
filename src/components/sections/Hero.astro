@@ -66,13 +66,22 @@ import { basic } from '../../config/cv.json';
                     {basic?.job} <!-- Remplacez par "Développeur avec Expertise en Finance d'Entreprise" -->
                 </p>
 
-                <p class="mt-1 text-base sm:text-xl">
-                    {basic?.summary}
-                </p>
+  
 
-                <div class="mt-20 flex flex-col items-center space-y-1">
+                <div class="mt-10 flex flex-col items-center space-y-4">
                     <p class="text-justify text-center">
-                        Envie d'en savoir plus sur mon parcours et mes compétences ? Découvrez comment mes expériences et mes formations ont forgé mon profil :
+                        Parcourez les étapes et objectifs que je me suis fixés pour progresser dans le domaine de l’informatique et atteindre mes ambitions:
+                    </p>
+                    <a href="/roadmap"
+                        class="relative inline-flex items-center justify-center px-10 py-4 text-base text-white
+                            font-semibold transition-all duration-200 rounded overflow-hidden
+                            animated-bg bounce-effect" role="button">
+                        Découvrir ma RoadMap
+                    </a>
+                </div>
+                <div class="mt-10 flex flex-col items-center space-y-1">
+                    <p class="text-justify text-center">
+                        Envie d'en savoir plus sur mon parcours et mes compétences? Découvrez comment mes expériences et mes formations ont forgé mon profil:
                     </p>
                     <a href="/about"
                         class="relative inline-flex items-center justify-center px-10 py-4 text-base text-white
@@ -82,17 +91,7 @@ import { basic } from '../../config/cv.json';
                     </a>
                 </div>
                 
-                <div class="mt-10 flex flex-col items-center space-y-4">
-                    <p class="text-justify text-center">
-                        Parcourez les étapes et objectifs que je me suis fixés pour progresser dans le domaine de l’informatique et atteindre mes ambitions :
-                    </p>
-                    <a href="/roadmap"
-                        class="relative inline-flex items-center justify-center px-10 py-4 text-base text-white
-                            font-semibold transition-all duration-200 rounded overflow-hidden
-                            animated-bg bounce-effect" role="button">
-                        Découvrir ma RoadMap
-                    </a>
-                </div>
+
                 
                 
                 <style>
@@ -102,9 +101,9 @@ import { basic } from '../../config/cv.json';
                     background-size: 500% 200%;
                     animation: gradientMove 2.5s infinite linear;
                     color: white;
-                    padding: 10px 20px;
+                    padding: 10px 5%;
                     border-radius: 8px;
-                    text-align: center;
+                    text-align: justify;
                     transition: background-color 5.3s ease;
                 }
                 
